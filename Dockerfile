@@ -25,6 +25,9 @@ ENV ENABLE_SERVICE_WORKER=true
 
 COPY . /devdocs
 
+# Fetch this archive with Docker to avoid a stalled Ruby download on Heroku.
+ADD https://downloads.devdocs.io/pandas~3.tar.gz /devdocs/docs-packages/pandas~3.tar.gz
+
 # Only the docs listed in config/icaic_docs.yml end up in the image.
 RUN thor icaic:install && \
     thor assets:compile && \
