@@ -1,0 +1,12 @@
+{
+  "name": "ICAIC DevDocs",
+  "description": "ICAIC 2026 documentation browser, built with its documentation on Heroku.",
+  "repository": "https://github.com/salyamq/devdocs",
+  "stack": "container",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
