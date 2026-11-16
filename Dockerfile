@@ -29,7 +29,8 @@ COPY . /devdocs
 ADD https://downloads.devdocs.io/pandas~3.tar.gz /devdocs/docs-packages/pandas~3.tar.gz
 
 # Only the docs listed in config/icaic_docs.yml end up in the image.
-RUN thor icaic:install && \
+ARG ICAIC_OFFLINE_IMAGES=true
+RUN ICAIC_OFFLINE_IMAGES=$ICAIC_OFFLINE_IMAGES thor icaic:install && \
     thor assets:compile && \
     rm -rf /tmp/*
 
